@@ -1,6 +1,7 @@
 import { CATEGORIES, CATEGORIES_KEYS } from "../utils/categories";
 import { Input } from "../components/Input";
 import { Select } from "../components/Select";
+import { Upload } from "../components/Upload";
 import { useState } from "react";
 
 export function Refund() {
@@ -16,18 +17,29 @@ export function Refund() {
 
             <Input required legend="Nome da Slicitação" />
 
-            <Select
-                required
-                legend="Categoria"
-                value={category}
-                onChange={(e) => setCategory(e.target.value)}
-            >
-                {CATEGORIES_KEYS.map((category) => (
-                    <option key={category} value={category}>
-                        {CATEGORIES[category].name}
-                    </option>
-                ))}
-            </Select>
+            <div className="flex gap-4">
+                <Select
+                    required
+                    legend="Categoria"
+                    value={category}
+                    onChange={(e) => setCategory(e.target.value)}
+                    className="flex-2"
+                >
+                    {CATEGORIES_KEYS.map((category) => (
+                        <option key={category} value={category}>
+                            {CATEGORIES[category].name}
+                        </option>
+                    ))}
+                </Select>
+
+                <Input 
+                    required
+                    legend="Valor"
+                    className="flex-1"
+                />
+            </div>
+
+            <Upload />
         </form>
     );
 }
