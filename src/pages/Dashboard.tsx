@@ -5,14 +5,14 @@ import { Input } from "../components/Input";
 import { Button } from "../components/Button";
 import { RefundItem } from "../components/RefundItem";
 
-import type { RefundItemProps } from "../components/RefundItem";
 import { CATEGORIES } from "../utils/categories";
+import { formatCurrency } from "../utils/formatCurrency";
 
 const REFUND_EXAMPLE = {
     id: "123",
     username: "Usuário",
     category: "Categoria",
-    amount: "123,00",
+    amount: formatCurrency(123.4),
     categoryImg: CATEGORIES.accommodation.icon,
 };
 
