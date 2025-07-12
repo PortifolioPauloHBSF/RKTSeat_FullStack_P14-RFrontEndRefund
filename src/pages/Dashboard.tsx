@@ -5,6 +5,17 @@ import { Input } from "../components/Input";
 import { Button } from "../components/Button";
 import { RefundItem } from "../components/RefundItem";
 
+import type { RefundItemProps } from "../components/RefundItem";
+import { CATEGORIES } from "../utils/categories";
+
+const REFUND_EXAMPLE = {
+    id: "123",
+    username: "Usuário",
+    category: "Categoria",
+    amount: "123,00",
+    categoryImg: CATEGORIES.accommodation.icon,
+};
+
 export function Dashboard() {
     const [name, setName] = useState("");
 
@@ -29,6 +40,13 @@ export function Dashboard() {
                     <img className="w-5" src={searchSvg} alt="Ícone de Pesquisar" />
                 </Button>
             </form>
+
+            <div className="mt-6 flex flex-col gap-4 max-h-[342px] overflow-y-scroll">
+                <RefundItem data={REFUND_EXAMPLE} />
+                <RefundItem data={REFUND_EXAMPLE} />
+                <RefundItem data={REFUND_EXAMPLE} />
+                <RefundItem data={REFUND_EXAMPLE} />
+            </div>
         </div>
     );
 }
