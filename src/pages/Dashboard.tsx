@@ -4,6 +4,7 @@ import searchSvg from "../assets/search.svg";
 import { Input } from "../components/Input";
 import { Button } from "../components/Button";
 import { RefundItem } from "../components/RefundItem";
+import { Pagination } from "../components/Pagination";
 
 import { CATEGORIES } from "../utils/categories";
 import { formatCurrency } from "../utils/formatCurrency";
@@ -46,6 +47,13 @@ export function Dashboard() {
                 <RefundItem data={REFUND_EXAMPLE} />
                 <RefundItem data={REFUND_EXAMPLE} />
                 <RefundItem data={REFUND_EXAMPLE} />
+            </div>
+
+            <div>
+                <Pagination 
+                    current={1}
+                    total={2}
+                />
             </div>
         </div>
     );
